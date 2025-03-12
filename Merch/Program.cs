@@ -34,7 +34,7 @@ app.MapPut("merch", (MerchendiseUpdateDTO dto) =>
 
 app.MapDelete("merch", (string merchName) =>
 {
-    Merchendise? merch = merchRepo.FirstOrDefault(o => o.MerchName == merchName);
+    var merch = merchRepo.FirstOrDefault(o => o.MerchName == merchName);
     if (merch != null) 
     { 
         merchRepo.Remove(merch);
